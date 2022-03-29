@@ -1,0 +1,235 @@
+$pink: #ff74a4;
+$violet: #9f6ea3;
+$lightblack: #515c6f;
+$white: #ffffff;
+$darkwhite: #cecaca;
+$pinkshadow: #ffcbdd;
+$lightbshadow: rgba(0, 0, 0, 0.15);
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+*::before *::after {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    .wrapper {
+        width: 380px;
+        position: relative;
+        padding: 25px 30px;
+        box-shadow: 0px 6px 15px $lightbshadow;
+        border-radius: 15px;
+        background-color: $white;
+        overflow: hidden;
+        i {
+            cursor: pointer;
+        }
+        .top-bar,
+        .progress-area .song-timer,
+        .controls,
+        .music-list .header,
+        .music-list ul li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .top-bar {
+            margin-bottom: 25px;
+            i {
+                font-size: 30px;
+                color: $lightblack;
+                &:first-child {
+                    margin-left: -7px;
+                }
+            }
+            span {
+                font-size: 18px;
+                margin-left: -3px;
+                color: $lightblack;
+            }
+        }
+        .img-area {
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .song-details {
+            text-align: center;
+            margin: 30px 0;
+            p {
+                color: $lightblack;
+            }
+            .name {
+                font-size: 21px;
+            }
+            .artist {
+                font-size: 18px;
+                opacity: 0.9;
+                line-height: 35px;
+            }
+        }
+        .progress-area {
+            height: 6px;
+            width: 100%;
+            background: #f0f0f0;
+            cursor: pointer;
+            border-radius: 50px;
+            .progress-bar {
+                height: inherit;
+                width: 0%;
+                background: linear-gradient(90deg, $pink 0%, $violet 100%);
+                position: relative;
+                border-radius: inherit;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    height: 12px;
+                    width: 12px;
+                    border-radius: 50%;
+                    top: -50%;
+                    right: -3px;
+                    background: inherit;
+                    opacity: 0;
+                    transition: opacity 0.2s ease;
+                }
+            }
+            &:hover > .progress-bar::before {
+                opacity: 1;
+            }
+            .song-timer {
+                margin-top: 3px;
+                span {
+                    color: $lightblack;
+                    font-size: 13px;
+                }
+            }
+        }
+        .controls {
+            margin: 35px 0 5px 0;
+            #repet-list {
+                font-size: 24px;
+            }
+            i {
+                font-size: 27px;
+                user-select: none;
+                /* apply linear gradient color to icons*/
+                background: linear-gradient(90deg, $pink 0%, $violet 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                &:nth-child(2),
+                &:nth-child(4) {
+                    font-size: 44px;
+                }
+            }
+            #prev {
+                margin-right: -13px;
+            }
+            #next {
+                margin-left: -13px;
+            }
+            .play-pause {
+                height: 54px;
+                width: 54px;
+                background: linear-gradient($white 0%, $darkwhite 70%);
+                box-shadow: 0 0 5px $pink;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    height: 43px;
+                    width: 43px;
+                    border-radius: inherit;
+                    background: linear-gradient($pink 0%, $violet);
+                }
+                i {
+                    height: 43px;
+                    width: 28px;
+                    line-height: 43px;
+                    text-align: center;
+                    background: inherit;
+                    border-radius: inherit;
+                    background-clip: text;
+                    position: relative;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    position: relative;
+                }
+            }
+        }
+        .music-list {
+            position: absolute;
+            left: 0;
+            bottom: -60%;
+            opacity: 0;
+            pointer-events: none;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px 30px;
+            border-radius: 15px;
+            background: $white;
+            box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+
+            max-height: 240px;
+            overflow-y: auto;
+            transition: .4s ease-out;
+
+            .header {
+                margin-bottom: 15px;
+                .row {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    font-size: 19px;
+                    color: $lightblack;
+                    i {
+                        cursor: default;
+                    }
+                }
+                #close {
+                    font-size: 22px;
+                    user-select: none;
+                }
+            }
+            ul {
+                padding: 5px;
+                margin: 10px 0;
+                li {
+                    font-size: 14px;
+                    list-style: none;
+                    border-bottom: 1px solid #e5e5e5;
+                    cursor: pointer;
+                    .row {
+                        span {
+                            font-size: 15px;
+                        }
+                        p {
+                            opacity: 0.9;
+                        }
+                    }
+                }
+            }
+        }
+        /* we will use in javascript*/
+        .show {
+            bottom: 0;
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+}
