@@ -19,13 +19,16 @@ see playlist
 
 ## Installation
 * Install dependencies
-- npm i
+
+npm i
 
 * create webpack-dist folder 
-- npm run build 
+
+npm run build 
 
 * start project 
-- npm run serve 
+
+npm run serve 
 
 ### Add required folders 
 
