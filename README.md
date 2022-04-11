@@ -1,7 +1,7 @@
 # Music App
 
 ## Description
-A simple music application. Firstly add a few folders [Add required folders section](#add-required-folders)
+A simple music application.[ Firstly add a few folders ](#add-required-folders)
 ```
 - App Dynamics
 song loop, play shuffle, playlist shuffle 
@@ -28,6 +28,8 @@ npm run build
 npm run serve 
 
 ### Add required folders 
+
 ./src/assets --> for images of the songs (.jpg)
+
 ./src/songs --> for songs (.mp3)
 
