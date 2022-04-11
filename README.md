@@ -4,10 +4,10 @@
 * A simple music application.[ Firstly add required folders ](#add-required-folders)
 
 * App Dynamics
-song loop, play shuffle, playlist shuffle 
-next - previous music
-stop - continue music
-see playlist  
+- song loop, play shuffle, playlist shuffle 
+- next - previous music
+- stop - continue music
+- see playlist  
 
 
 ## Technologies
