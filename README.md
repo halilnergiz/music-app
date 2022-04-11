@@ -19,20 +19,19 @@ see playlist
 
 ## Installation
 * Install dependencies
-
+```
 npm i
-
+```
 * create webpack-dist folder 
-
+```
 npm run build 
-
+```
 * start project 
-
+```
 npm run serve 
-
+```
 ### Add required folders 
+* ./src/assets --> for images of the songs (.jpg)
 
-./src/assets --> for images of the songs (.jpg)
-
-./src/songs --> for songs (.mp3)
+* ./src/songs --> for songs (.mp3)
 
