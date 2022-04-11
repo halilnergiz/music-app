@@ -1,7 +1,7 @@
 # Music App
 
 ## Description
-A simple music application. Firstly add a few folders [Add required folders section](#-add-required-folders)
+A simple music application. Firstly add a few folders [Add required folders section](#add-required-folders)
 ```
 - App Dynamics
 song loop, play shuffle, playlist shuffle 
